@@ -1,0 +1,147 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+{% include 'accounts/status.html' %}
+
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h5>Admin Panel:</h5>
+        <div class="card card-body">
+            <table class="table table-sm">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Profile</th>
+                    <th>Admin</th>
+                    <th>Phone</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td><a class="btn btn-sm btn-info" href="profile/">View</a></td>
+                    <td>Name</td>
+                    <td>Phone</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <h5>About us:</h5>
+        <div class="card card-body">
+
+        </div>
+    </div>
+
+</div>
+<hr>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <h5>Vision:</h5>
+        <div class="card card-body">
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <h5>Pending Amount:</h5>
+        <div class="card card-body">
+            <table class="table table-sm table-striped table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Payment Date</th>
+                    <th style="text-align:center;">Member's Name</th>
+                    <th style="text-align:center;">Pending Amount</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                {% for a in amount %}
+
+                {% if a.status == 'Pending' %}
+
+                <tr class="table-danger">
+                    <td>{{a.date}}</td>
+                    <td style="text-align:center;">{{a.profile.name}}</td>
+                    <td style="text-align:center;">{{a.amount}}</td>
+                    <td>{{a.status}}</td>
+                </tr>
+
+                {% endif%}
+
+                {% endfor %}
+
+                <tfoot class="thead-dark">
+                <tr>
+                    <th>Payment Date</th>
+                    <th>Member's Name</th>
+                    <th>Total Pending Amount: {{total_pending_amount}}</th>
+                    <th>Status</th>
+                </tr>
+                </tfoot>
+            </table>
+            <center><h4><a href="pending_amount/" style="color:black;">See more...</a></h4></center>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <center><h5>LAST Month Amounts Details</h5></center>
+            <div class="card card-body">
+                <table class="table table-sm table-striped table-hover">
+
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Payment Date</th>
+                        <th>Member's Name</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for a in amount %}
+
+                    {% if a.status == 'Pending' %}
+
+                    <tr class="table-danger">
+                        <td>{{a.date}}</td>
+                        <td>{{a.profile.name}}</td>
+                        <td>{{a.amount}}</td>
+                        <td>{{a.status}}</td>
+                    </tr>
+
+                    {% else %}
+
+                    <tr class="table-success">
+                        <td>{{a.date}}</td>
+                        <td>{{a.profile.name}}</td>
+                        <td>{{a.amount}}</td>
+                        <td>{{a.status}}</td>
+                    </tr>
+                    {% endif%}
+
+                    {% endfor %}
+                    </tbody>
+
+                    <tfoot class="thead-dark">
+
+                    <tr>
+                        <th>Payment Date</th>
+                        <th>Member's Name</th>
+                        <th>Amount: {{total_amount}}</th>
+                        <th>Status</th>
+                    </tr>
+                    </tfoot>
+                </table>
+                <center><h4><a href="amounts/" style="color:black;">See more...</a></h4></center>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,146 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+
+<div class="row">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Personal Information</h5>
+
+                <table class="table table-sm">
+                    <tbody>
+                    <tr>
+                        <td colspan="2" style="max-width: 200px;max-height:200px;margin: 0 auto;border-radius: 50%;">
+                            {{form.profile_pic}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                        <td>{{form.name}}</td>
+                        <td>NID:</td>
+                        <td>{{form.nid}}</td>
+                    </tr>
+                    <tr>
+                        <td>Member ID:</td>
+                        <td>{{form.member_id}}</td>
+                        <td>Joining Date:</td>
+                        <td>{{form.joining_date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Father's Name:</td>
+                        <td>{{form.father_name}}</td>
+                        <td>Mother's Name:</td>
+                        <td>{{form.mother_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Nationality:</td>
+                        <td>{{form.nationality}}</td>
+                        <td>Gender:</td>
+                        <td>{{form.gender}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Occupation:</td>
+                        <td>{{form.occupation}}</td>
+                        <td>Date of Birth:</td>
+                        <td>{{form.dob}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>{{form.email}}</td>
+                        <td>Phone:</td>
+                        <td>{{form.phone}}</td>
+                    </tr>
+                    <tr>
+                        <td>Marital Status:</td>
+                        <td>{{form.marital_status}}</td>
+                        <td>Religion:</td>
+                        <td>{{form.religion}}</td>
+                    </tr>
+                    <tr>
+                        <td>Permanent Address:</td>
+                        <td>{{form.permanent_address}}</td>
+                        <td>Present Address:</td>
+                        <td>{{form.present_address}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+                <h5>Nominee Information</h5>
+
+                <table class="table table-sm">
+                    <tbody>
+                    <tr>
+                        <td>Name:</td>
+                        <td>{{form.nominee_name}}</td>
+                        <td>Relation with Nominee:</td>
+                        <td>{{form.relation}}</td>
+                    </tr>
+                    <tr>
+                        <td>NID:</td>
+                        <td>{{form.nominee_nid}}</td>
+                        <td>Phone:</td>
+                        <td>{{form.nominee_phone}}</td>
+                    </tr>
+                    <tr>
+                        <td>Father's Name:</td>
+                        <td>{{form.nominee_father_name}}</td>
+                        <td>Mother's Name:</td>
+                        <td>{{form.nominee_mother_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>{{form.nominee_gender}}</td>
+                        <td>Date of Birth:</td>
+                        <td>{{form.nominee_dob}}</td>
+                    </tr>
+                    <tr>
+                        <td>Marital Status:</td>
+                        <td>{{form.nominee_marital_status}}</td>
+                        <td>Religion:</td>
+                        <td>{{form.nominee_religion}}</td>
+                    </tr>
+                    <tr>
+                        <td>Permanent Address:</td>
+                        <td>{{form.nominee_permanent_address}}</td>
+                        <td>Present Address:</td>
+                        <td>{{form.nominee_present_address}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+                <h5>Bank Information</h5>
+                <table class="table table-sm">
+                    <tbody>
+                    <tr>
+                        <td>Account No:</td>
+                        <td>{{form.account_no}}</td>
+                    </tr>
+                    <tr>
+                        <td>Bank Name:</td>
+                        <td>{{form.bank_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Branch Address:</td>
+                        <td>{{form.branch_address}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <input type="submit" name="Submit">
+    </form>
+
+</div>
+<br>
+
+{% endblock %}

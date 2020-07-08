@@ -1,0 +1,128 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<center>
+    <br>
+    <div class="row">
+
+        <div class="col zoom">
+            <div class="col-md">
+                <div class="card text-center text white mb-3" id="total-orders">
+                    <div class="card-header">
+                        <h4 class="card-title">{{profile.name}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Member ID: {{profile.member_id}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col zoom">
+            <div class="col-md">
+                <div class="card text-center text white mb-3" id="total-orders">
+                    <div class="card-header">
+                        <h4 class="card-title">Total Amount</h4>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">BDT {{total_amount}}</h3>
+                    </div>
+                    <a href="{% url 'create_amount' %}" class="btn btn-primary btn-sm btn-block">Create Amount</a>
+                </div>
+            </div>
+        </div>
+
+        <!--search-->
+
+        <div class="col">
+            <div class="card card-body">
+                <table>
+                    <tr>
+                        <td>From Date:</td>
+                        <td><input class="form-control" id="from_date" type="date" placeholder="From Date"></td>
+                    </tr>
+                    <tr>
+                        <td>To Date:</td>
+                        <td><input class="form-control" id="to_date" type="date" placeholder="To Date"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</center>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <table id="example" class="table table-striped table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Payment Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody id="myTable">
+
+                {% for p in amountprofile %}
+
+                {% if p.status == 'Pending' %}
+                <tr class="table-danger">
+                    <td>{{p.date}}</td>
+                    <td>{{p.amount}}</td>
+                    <td>{{p.status}}</td>
+                </tr>
+
+                {% else %}
+
+                <tr class="table-success">
+                    <td>{{p.date}}</td>
+                    <td>{{p.amount}}</td>
+                    <td>{{p.status}}</td>
+                </tr>
+                {% endif%}
+
+                {% endfor %}
+                </tbody>
+
+                <tfoot class="thead-dark">
+                <tr>
+                    <th>Payment Date</th>
+                    <th>Amount: {{total_amount}}</th>
+                    <th>Status</th>
+                </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+
+<!--DateTable sorting-->
+
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+
+
+<!--Date search-->
+
+$(document).ready(function(){
+  $("#date").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+
+</script>
+
+{% endblock content %}

@@ -1,0 +1,94 @@
+{% load static %}
+
+
+<br>
+
+<div id="demo" class="carousel slide " data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/la.jpg' %}" alt="Los Angeles" width="1100" height="500">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/chicago.jpg' %}" alt="Chicago" width="1100" height="500">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/ny.jpg' %}" alt="New York" width="1100" height="500">
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<hr>
+
+<div class="row">
+
+    <div class="col zoom">
+        <div class="col-md">
+            <div class="card text-center text white mb-3" id="orders-pending">
+                <div class="card-header">
+                    <h5 class="card-title">Total Members</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><a style="color:black;" href="members/">{{total_member}}</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col zoom">
+        <div class="col-md">
+            <div class="card text-center text white mb-3" id="total-orders">
+                <div class="card-header">
+                    <h5 class="card-title">Total Amount</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">BDT: <a style="color:black;" href="amounts/">{{total_amount}}</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col zoom">
+        <div class="col-md">
+            <div class="card text-center text white mb-3" id="orders-delivered">
+                <div class="card-header">
+                    <h5 class="card-title">Amount Complete</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">BDT: {{total_complete_amount}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col zoom">
+        <div class="col-md">
+            <div class="card text-center text white mb-3" id="pending">
+                <div class="card-header">
+                    <h5 class="card-title">Amount Pending</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">BDT: <a style="color:black;"
+                                                   href="pending_amount/">{{total_pending_amount}}</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

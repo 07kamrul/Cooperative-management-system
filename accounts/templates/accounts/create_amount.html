@@ -1,0 +1,51 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.management_form }}
+                    {{form}}
+<!--                <table>-->
+<!--                    <tr>-->
+<!--                        <td>Name</td>-->
+<!--                        <td>{{form.profile}}</td>-->
+<!--                    </tr>-->
+
+<!--                    <tr>-->
+<!--                        <td>Date</td>-->
+<!--                        <td><input type="date" value={{form.date}}></td>-->
+<!--                        &lt;!&ndash;                        <td>{{form.date}}</td>&ndash;&gt;-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Amount</td>-->
+<!--                        <td><input type="number" value={{form.amount}}></td>-->
+<!--                        &lt;!&ndash;                        <td>{{form.amount}}</td>&ndash;&gt;-->
+
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Status</td>-->
+<!--                        <td>-->
+<!--                            <select>-->
+<!--                                <option value=value={{form.status}}></option>-->
+<!--                            </select>-->
+<!--                        </td>-->
+
+<!--                        &lt;!&ndash;                        <td>{{form.status}}</td>&ndash;&gt;-->
+<!--                    </tr>-->
+<!--                </table>-->
+
+                <hr>
+                <input type="submit" name="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
