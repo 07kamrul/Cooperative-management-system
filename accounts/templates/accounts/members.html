@@ -37,7 +37,6 @@
 
                 {% for p in profile_list %}
 
-
                 <tr>
                     <td><a class="btn btn-sm btn-info" href="{% url 'profile' p.profile_id %}">View</a></td>
                     <td>{{p.name}}</td>
@@ -79,29 +78,7 @@
 </div>
 
 <script>
-
-<!--DateTable sorting-->
-
-$(document).ready(function() {
     $('#example').DataTable();
-} );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
+
 {% endblock content %}

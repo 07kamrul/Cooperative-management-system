@@ -1,0 +1,349 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<style>
+    body{
+  font-family: ubuntu;
+}
+.user-detail-main{
+  background: #f5f5f5;
+}
+.profile-back{
+  height: 225px;
+  background-image: url('http://nicesnippets.com/demo/back-img2.jpeg');
+  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
+}
+.profile-back img{
+  height: 120px;
+  width: 120px;
+  margin-top: 165px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.user-detail{
+  padding-top: 65px;
+}
+.user-detail button{
+  font-size: 12px;
+}
+#accordionMyStory .card-header{
+  border-top: 5px solid #00B5EC;
+}
+#accordionMyPlan .card-header{
+  border-top: 5px solid #32B92D;
+}
+#accordionMyTasks .card-header{
+  border-top: 5px solid #8E44AD;
+}
+#accordionUserInfo .card-header{
+  border-top: 5px solid #C82333;
+}
+#accordionSocialStatistics .card-header{
+  border-top: 5px solid #00AAA0;
+}
+#accordionSaleStatistics .card-header{
+  border-top: 5px solid #7B8D8E;
+}
+.card-header h6{
+  display: inline-block;
+}
+.card-header a{
+  cursor: pointer;
+}
+.card-body p{
+  font-size: 14px;
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+    .accordion-group-one{
+      padding-left: 15px !important;
+    }
+    .accordion-group-three{
+      padding-right: 15px !important;
+    }
+}
+
+
+</style>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>User Profile Setting | Bootstrap 4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="custom.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-12 profile-main mt-4">
+            <div class="row">
+                <div class="col-md-12 col-12 user-detail-main border mb-3 pb-2">
+                    <div class="row">
+                        <div class="col-md-12 col-12 profile-back">
+                            <img src="http://nicesnippets.com/demo/profile-1.jpg" class="rounded-circle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12 user-detail text-center">
+                            <h4 class="m-0"><strong>Michael Finn</strong></h4>
+                            <p class="m-0">Web Developer</p>
+                            <p class="mb-1">Aatman Infotech</p>
+                            <button class="btn btn-info btn-sm">FOLLOWER</button>
+                            <button class="btn btn-primary btn-sm">FOLLOWING</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-12 mt-4 pl-0 accordion-group-one">
+                    <div id="accordionMyStory" class="mb-2">
+                        <div class="card rounded-0 story-card">
+                            <div class="card-header rounded-0 pt-2 pb-2" id="headingMyStory">
+                                <h6 class="mb-0">My Story</h6>
+                                <a class="float-right" data-toggle="collapse" data-target="#collapseMyStory"
+                                   aria-expanded="true" aria-controls="collapseMyStory">
+                                    <i class="icon fa fa-minus"></i>
+                                </a>
+                            </div>
+                            <div id="collapseMyStory" class="collapse show" aria-labelledby="headingMyStory"
+                                 data-parent="#accordionMyStory">
+                                <div class="card-body pt-2 pb-2">
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>About</strong></h6>
+                                        <p class="section-content m-0">Write something about you.</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Introduction</strong></h6>
+                                        <p class="section-content m-0">Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit, sed do eiusmod
+                                            tempor incididunt.</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Achievement</strong></h6>
+                                        <p class="section-content m-0">Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit, sed do eiusmod
+                                            tempor incididunt.</p>
+                                    </div>
+                                    <button class="btn btn-info btn-sm">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accordionMyPlan">
+                        <div class="card rounded-0 story-card">
+                            <div class="card-header rounded-0 pt-2 pb-2" id="headingMyPlan">
+                                <h6 class="mb-0">My Plan</h6>
+                                <a class="float-right" data-toggle="collapse" data-target="#collapseMyPlan"
+                                   aria-expanded="true" aria-controls="collapseMyPlan">
+                                    <i class="icon fa fa-minus"></i>
+                                </a>
+                            </div>
+                            <div id="collapseMyPlan" class="collapse show" aria-labelledby="headingMyPlan"
+                                 data-parent="#accordionMyPlan">
+                                <div class="card-body pt-2 pb-2">
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Current Plan : Basic Plan</strong></h6>
+                                        <p class="section-content m-0">Your next charge is $1000 due March 8, 2018</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <ul>
+                                            <li>400 Orders/Month</li>
+                                            <li>10 GB storage</li>
+                                            <li>5 Users</li>
+                                            <li>Mobile App Access</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-success btn-sm">Upgrade Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 mt-4 accordion-group-two">
+                    <div id="accordionUserInfo" class="mb-2">
+                        <div class="card rounded-0 info-card">
+                            <div class="card-header rounded-0 pt-2 pb-2" id="headingUserInfo">
+                                <h6 class="mb-0">User Info</h6>
+                                <a class="float-right" data-toggle="collapse" data-target="#collapseUserInfo"
+                                   aria-expanded="true" aria-controls="collapseUserInfo">
+                                    <i class="icon fa fa-minus"></i>
+                                </a>
+                            </div>
+                            <div id="collapseUserInfo" class="collapse show" aria-labelledby="headingUserInfo"
+                                 data-parent="#accordionUserInfo">
+                                <div class="card-body pt-2 pb-2">
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Name</strong></h6>
+                                        <p class="section-content m-0">Michael M. Finn</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Address</strong></h6>
+                                        <p class="section-content m-0">
+                                            204 Pent Tower, sweet street, London.
+                                        </p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Contact Number</strong></h6>
+                                        <p class="section-content m-0">+91 9977001100</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Email</strong></h6>
+                                        <p class="section-content m-0">michael4747@gmail.com</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Website</strong></h6>
+                                        <p class="section-content m-0">abcxyz.com</p>
+                                    </div>
+                                    <button class="btn btn-danger btn-sm">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accordionSocialStatistics">
+                        <div class="card rounded-0 info-card">
+                            <div class="card-header rounded-0 pt-2 pb-2" id="headingSocialStatistics">
+                                <h6 class="mb-0">Social Statistics</h6>
+                                <a class="float-right" data-toggle="collapse" data-target="#collapseSocialStatistics"
+                                   aria-expanded="true" aria-controls="collapseSocialStatistics">
+                                    <i class="icon fa fa-minus"></i>
+                                </a>
+                            </div>
+                            <div id="collapseSocialStatistics" class="collapse show" lass="collapse show"
+                                 aria-labelledby="headingSocialStatistics" data-parent="#accordionSocialStatistics">
+                                <div class="card-body pt-2 pb-2">
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Followers</strong></h6>
+                                        <p class="section-content m-0">233</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Following</strong></h6>
+                                        <p class="section-content m-0">114</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Posts</strong></h6>
+                                        <p class="section-content m-0">100</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 mt-4 pr-0 accordion-group-three">
+                    <div id="accordionMyTasks" class="mb-2">
+                        <div class="card rounded-0 story-card">
+                            <div class="card-header rounded-0 pt-2 pb-2" id="headingMyTasks">
+                                <h6 class="mb-0">My Tasks</h6>
+                                <a class="float-right" data-toggle="collapse" data-target="#collapseMyTasks"
+                                   aria-expanded="true" aria-controls="collapseMyTasks">
+                                    <i class="icon fa fa-minus"></i>
+                                </a>
+                            </div>
+                            <div id="collapseMyTasks" class="collapse show" aria-labelledby="headingMyTasks"
+                                 data-parent="#accordionMyTasks">
+                                <div class="card-body pt-2 pb-2">
+                                    <div class="body-section mb-3">
+                                        <p class="m-0">Completed Pre-Orders - 90%</p>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped" role="progressbar"
+                                                 style="width: 10%" aria-valuenow="10" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <p class="m-0">Completed Orders - 40%</p>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                                 style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <p class="m-0">Design New Ad - 20%</p>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar"
+                                                 style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <p class="m-0">Conduct Feasibility Test - 60%</p>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                                                 style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <p class="m-0">Conduct Domain Analysis - 80%</p>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                                                 style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accordionSaleStatistics">
+                        <div class="card rounded-0 info-card">
+                            <div class="card-header rounded-0 pt-2 pb-2" id="headingSaleStatistics">
+                                <h6 class="mb-0">Sale Statistics</h6>
+                                <a class="float-right" data-toggle="collapse" data-target="#collapseSaleStatistics"
+                                   aria-expanded="true" aria-controls="collapseSaleStatistics">
+                                    <i class="icon fa fa-minus"></i>
+                                </a>
+                            </div>
+                            <div id="collapseSaleStatistics" class="collapse show" lass="collapse show"
+                                 aria-labelledby="headingSaleStatistics" data-parent="#accordionSaleStatistics">
+                                <div class="card-body pt-2 pb-2">
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Today</strong></h6>
+                                        <p class="section-content m-0">$400.00</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Last Week</strong></h6>
+                                        <p class="section-content m-0">$1140.00</p>
+                                    </div>
+                                    <div class="body-section mb-3">
+                                        <h6 class="section-heading mb-1"><strong>Last Month</strong></h6>
+                                        <p class="section-content m-0">$8010.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    $(".card-header a").click(function(){
+       $(this).find('.icon').toggleClass('fa-plus fa-minus');
+});
+
+</script>
+{% endblock %}

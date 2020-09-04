@@ -68,7 +68,7 @@
         <div class="col-md">
             <div class="card text-center text white mb-3" id="orders-delivered">
                 <div class="card-header">
-                    <h5 class="card-title">Amount Complete</h5>
+                    <h5 class="card-title">Complete Amount</h5>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">BDT: {{total_complete_amount}}</h3>
@@ -81,7 +81,7 @@
         <div class="col-md">
             <div class="card text-center text white mb-3" id="pending">
                 <div class="card-header">
-                    <h5 class="card-title">Amount Pending</h5>
+                    <h5 class="card-title">Pending Amount</h5>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">BDT: <a style="color:black;"
@@ -91,4 +91,17 @@
         </div>
     </div>
 
+    <div class="col zoom">
+        <div class="col-md">
+            <div class="card text-center text white mb-3" id="pending">
+                <div class="card-header">
+                    <h5 class="card-title">Total Cost</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">BDT: <a style="color:black;"
+                                                   href="total_cost/">{{total_cost}}</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

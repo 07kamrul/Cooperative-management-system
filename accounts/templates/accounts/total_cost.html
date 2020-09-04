@@ -1,0 +1,95 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+<center>
+    <br>
+    <div class="col-4 zoom">
+        <div class="col-md">
+            <div class="card text-center text white mb-3" id="total-orders">
+                <div class="card-header">
+                    <h5 class="card-title">Total Cost</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{total_cost}}</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</center>
+
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <table id="amount" class="table table-striped table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Descriptions</th>
+                    <th>Total Cost</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for c in cost %}
+
+                <tr>
+                    <td>{{c.date}}</td>
+                    <td>{{c.title}}</td>
+                    <td>{{c.description}}</td>
+                    <td>{{c.amount}}</td>
+                </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+                <tfoot class="thead-dark">
+
+                <tr>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Descriptions</th>
+                    <th>Total Cost: {{total_cost}}</th>
+                </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#amount').DataTable();
+</script>
+
+<script>
+    <!--From date to date filter-->
+
+
+function onDateChange(){
+    var fromDate = document.getElementById('from_date').value;
+    var toDate = document.getElementById('to_date').value;
+    var amountTable = document.getElementById('myTable').column;
+
+    console.log(amountTable);
+
+    if(fromDate && toDate){
+
+        if(toDate >= fromDate){
+            console.log(fromDate+":"+toDate);
+
+        }
+        else{
+            alert("To date must be greater than From date")
+        }
+    }
+}
+
+
+
+
+</script>
+
+{% endblock content %}

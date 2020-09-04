@@ -1,0 +1,67 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+
+
+
+
+
+
+
+</style>
+
+<div class="container">
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h4>Bank Information</h4>
+            <hr>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-md">
+                        <table class="table table-borderless table-hover">
+                            <tr>
+                                <td>Account No:</td>
+                                <td>{{form.account_no}}</td>
+                            </tr>
+                            <tr>
+                                <td>Bank Name:</td>
+                                <td>{{form.bank_name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Branch Address:</td>
+                                <td>{{form.branch_address}}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md">
+                        <h2>Please check again and confim to submit update button</h2>
+
+                    </div>
+                    <div class="col-md">
+                        <input type="submit">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

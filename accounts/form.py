@@ -22,3 +22,20 @@ class CreateUserForm(UserCreationForm):
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
+
+class CreateProfileForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = '__all__'
+
+
+class CostForm(ModelForm):
+    class Meta:
+        model = TotalCost
+        fields = '__all__'
+
+
+class DepositeForm(ModelForm):
+    class Meta:
+        model = Deposite
+        fields = '__all__'

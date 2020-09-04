@@ -1,0 +1,126 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<style>
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.parent{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.child{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
+}
+
+
+
+</style>
+
+
+<div class="row">
+
+    <div class="col-3 card">
+        <h1>Left side bar</h1>
+    </div>
+
+    <div class="parent col-6 card" style="height:550px">
+
+        <div class="child col-md">
+
+            {% for deposite in deposit_posts %}
+
+            <div class="card" >
+                <img src="{{deposite.diposite_pic.url}}" height="200" width="auto" alt="Responsive image">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="card-title col" style="align: left">{{deposite.profile.name}}</div>
+                        <div class="card-title col" style="align: right">{{deposite.profile.member_id}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="card-title col" style="align: left">{{deposite.date}}</div>
+                        <div class="card-title col" style="align: right">BDT: {{deposite.amount}} TK Only</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <br>
+            {% endfor %}
+            <!--            <div class="card" style="width: auto;">-->
+            <!--                <img src="..." class="img-fluid" alt="Responsive image">-->
+            <!--                <div class="card-body">-->
+            <!--                    <h5 class="card-title">Member Name</h5>-->
+            <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
+            <!--                        card's content.</p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <br>-->
+
+            <!--            <div class="card" style="width: auto;">-->
+            <!--                <img src="..." class="img-fluid" alt="Responsive image">-->
+            <!--                <div class="card-body">-->
+            <!--                    <h5 class="card-title">Member Name</h5>-->
+            <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
+            <!--                        card's content.</p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <br>-->
+
+            <!--            <div class="card" style="width: auto;">-->
+            <!--                <img src="..." class="img-fluid" alt="Responsive image">-->
+            <!--                <div class="card-body">-->
+            <!--                    <h5 class="card-title">Member Name</h5>-->
+            <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
+            <!--                        card's content.</p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <!--            -->
+            <!--            <div class="card text-center text white mb-6" id="orders-pending">-->
+            <!--                <div class="card-header row">-->
+            <!--                    <div class="col">-->
+            <!--                        <h5 class="card-title">Member Name</h5>-->
+            <!--                    </div>-->
+            <!--                    <div class="col">-->
+            <!--                        <h5 class="card-title">Member Id</h5>-->
+            <!--                    </div>-->
+            <!--                    <div class="col">-->
+            <!--                        <h5 class="card-title">Diposite Date</h5>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="card-body">-->
+            <!--                    <h3 class="card-title"><a style="color:black;" href="#">Hello</a></h3>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+        </div>
+
+
+    </div>
+
+
+    <div class="col-3 card">
+        <h1>Right side bar</h1>
+    </div>
+
+</div>
+
+{% endblock content %}

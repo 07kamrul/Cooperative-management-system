@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from datetime import datetime, date
+from django.utils import timezone
 
 # Create your models here.
 from pylint.checkers.typecheck import _
@@ -45,16 +46,14 @@ class Profile(models.Model):
     permanent_address = models.CharField(max_length=200, null=True, blank=True)
     present_address = models.CharField(max_length=200, null=True, blank=True)
 
+    #Nominee
 
     nominee_name = models.CharField(max_length=200, null=True, blank=True)
     relation = models.CharField(max_length=200, null=True, blank=True)
     nominee_father_name = models.CharField(max_length=200, null=True, blank=True)
     nominee_mother_name = models.CharField(max_length=200, null=True, blank=True)
     nominee_phone = models.CharField(max_length=15, null=True, blank=True)
-
     nominee_dob = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
-
-
     nominee_gender = models.CharField(max_length=200, null=True, choices=GENDER_STATUS)
     nominee_marital_status = models.CharField(max_length=200, null=True, choices=MARITAL_STATUS)
     nominee_religion = models.CharField(max_length=200, null=True, choices=RELIGION_STATUS)
@@ -62,6 +61,7 @@ class Profile(models.Model):
     nominee_present_address = models.CharField(max_length=200, null=True, blank=True)
     nominee_permanent_address = models.CharField(max_length=200, null=True, blank=True)
 
+    #Bank
 
     account_no = models.CharField(max_length=200, null=True, blank=True)
     bank_name = models.CharField(max_length=200, null=True, blank=True)
@@ -88,12 +88,20 @@ class Amount(models.Model):
         return self.profile.name
 
 
-    #
-    # @property
-    # def get_total_amount(self):
-    #     amountprofile = self.amount_set.all()
-    #     total_amount = sum([item.amount for item in amountprofile])
-    #     return total_amount
+
+class TotalCost(models.Model):
+    date = models.DateField(auto_now_add=True, auto_now=False, null=True, blank=True)
+    title = models.CharField(max_length=200, null=True, blank=True)
+    description = models.CharField(max_length=200, null=True, blank=True)
+    amount = models.IntegerField(default=0, null=True, blank=True)
+
+
+    def __str__(self):
+        return self.title
+
+
+
+
 
 # no need
 
@@ -112,3 +120,11 @@ class Member(models.Model):
     #     return amounts
 
 
+class Deposite(models.Model):
+    profile = models.ForeignKey(Profile, null=True, on_delete=models.SET_NULL)
+    date = models.DateField(auto_now_add=True, auto_now=False, null=True, blank=True)
+    amount = models.IntegerField(default=0, null=True, blank=True)
+    diposite_pic = models.ImageField(default="diposite.jpg", null=True, blank=True)
+
+    def __str__(self):
+        return self.profile.name

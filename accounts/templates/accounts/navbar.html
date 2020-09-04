@@ -12,25 +12,44 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+
+                {% if request.user.is_staff %}
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin Panel</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="{% url  'all_user' %}">All User</a>
+                        <a class="dropdown-item" href="{% url  'total_cost' %}">Total Cost</a>
+                        <a class="dropdown-item" href="{% url  'create_amount' %}">Add Amount</a>
+                        <a class="dropdown-item" href="{% url  'create_profile' %}">Create profile</a>
+                        <a class="dropdown-item" href="{% url  'create_deposite' %}">Create Deposite</a>
+                    </div>
+                </li>
+            {% endif %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'depositeFeed' %}">Feeds</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/members/">Members</a>
+                    <a class="nav-link" href="{% url 'members' %}">Members</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/amounts/">Amounts</a>
+                    <a class="nav-link" href="{% url 'amounts' %}">Amounts</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Your Name
+                        {{request.user}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="profile/">Profile</a>
+                        <a class="dropdown-item" href="{% url 'your_profile'  %}">Profile</a>
                         <a class="dropdown-item" href="#">Terms and Conditions</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="settings/">Settings</a>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="{% url 'settings' %}">Settings</a>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -66,5 +85,3 @@ $(window).on("load resize", function() {
 });
 
 </script>
-
-

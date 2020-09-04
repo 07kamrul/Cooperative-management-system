@@ -13,23 +13,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 
 <br>
@@ -42,8 +25,8 @@
             <img class="profile-pic" src="{{profile.profile_pic.url}}" alt="">
             <!--            <h1 style="text-align:center;padding:5px">Total</h1>-->
             <hr>
-            <a href="{% url 'update_profile' profile.id %}" class="btn btn-outline-info btn-sm btn-block">Update
-                Profile</a>
+            <a href="{% url 'settings' %}" class="btn btn-outline-info btn-sm btn-block">Account
+                Settings</a>
         </div>
 
         <br>
@@ -89,7 +72,15 @@
 
     <div class="col-md">
         <div class="card card-body">
-            <h4>Personal Information</h4>
+            <div class="row">
+                <div class="col-md">
+                    <h4>Personal Information</h4>
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'personal_information_update' profile.id %}" class="btn btn-outline-info btn-md">Edit</a>
+                </div>
+            </div>
+
             <hr>
             <div class="row">
                 <div class="col-md">
@@ -173,10 +164,18 @@
                     </table>
 
                 </div>
+
             </div>
 
             <hr>
-            <h4>Nominee Information</h4>
+            <div class="row">
+                <div class="col-md">
+                    <h4>Nominee Information</h4>
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'nominee_information_update' profile.id %}" class="btn btn-outline-info btn-md">Edit</a>
+                </div>
+            </div>
             <hr>
 
             <div class="row">
@@ -211,10 +210,6 @@
                         <tr>
                             <td>Gender:</td>
                             <td>{{profile.nominee_gender}}</td>
-                        </tr>
-                        <tr>
-                            <td>Marital Status:</td>
-                            <td>{{profile.nominee_marital_status}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -259,7 +254,14 @@
             </div>
 
             <hr>
-            <h4>Bank Information</h4>
+            <div class="row">
+                <div class="col-md">
+                    <h4>Bank Information</h4>
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'bank_information_update' profile.id %}" class="btn btn-outline-info btn-md">Edit</a>
+                </div>
+            </div>
             <hr>
             <div class="row">
                 <div class="col-md">

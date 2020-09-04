@@ -1,0 +1,51 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="container">
+    <div class="col-md">
+        <div class="card card-body">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <hr>
+
+                <div class="row">
+                    <div class="col-md">
+
+                        <table class="table table-borderless table-hover">
+                            <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td>{{form.profile}}</td>
+                            </tr>
+                            <tr>
+                                <td>Amount:</td>
+                                <td>{{form.amount}}</td>
+                            </tr>
+                            <tr>
+                                <td>Invoice:</td>
+                                <td>{{form.diposite_pic}}</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md">
+                            <input type="submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock %}

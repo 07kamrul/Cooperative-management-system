@@ -1,41 +1,15 @@
-<!--<h1>Register</h1>-->
-
-<!--<form method="POST" action="">-->
-<!--    {% csrf_token %}-->
-<!--    {{form.username.label}}-->
-<!--    {{form.username}}-->
-
-<!--    {{form.password1.label}}-->
-<!--    {{form.password1}}-->
-
-<!--    {{form.password2.label}}-->
-<!--    {{form.password2}}-->
-
-<!--    {{form.email.label}}-->
-<!--    {{form.email}}-->
-
-
-<!--    <input type="submit" name="Create User">-->
-<!--</form>-->
-
+{% extends 'accounts/main.html' %}
 {% load static %}
 
+{% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
 
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+<!-- Font Icon -->
+<link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
 
-    <!-- Main css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+<!-- Main css -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 
 <div class="main">
 
@@ -87,5 +61,6 @@
 <!-- JS -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-</html>
+
+
+{% endblock content %}
