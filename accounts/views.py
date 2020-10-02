@@ -38,6 +38,8 @@ def depositeFeed(request):
 
 
 def createDeposite(request):
+
+    
     form = DepositeForm()
 
     if request.method == 'POST':
@@ -49,6 +51,7 @@ def createDeposite(request):
 
     context = {'form': form}
     return render(request, 'accounts/create_deposite.html', context)
+
 
 
 
@@ -128,11 +131,8 @@ def yourProfile(request):
                 print(x)
 
                 profile = Profile.objects.get(id=x)
-
                 amountprofile = profile.amount_set.all()
-
                 total_amount = sum([item.amount for item in amountprofile])
-
                 pending = amountprofile.filter(status='Pending')
                 complete_count = amountprofile.filter(status='Complete').count()
 
@@ -542,6 +542,36 @@ def createAmount(request):
 
     return render(request, 'accounts/create_amount.html', context)
 
+
+def updateAmount(request,pk):
+    amount = Amount.objects.get(id=pk)
+
+    form = AmountForm(instance=amount)
+
+    print(type(form))
+
+    if request.method == 'POST':
+        form = AmountForm(request.POST, request.FILES, instance=amount)
+
+        if form.is_valid():
+            form.save()
+            return redirect('/amounts/')
+
+    context = {'form': form, 'amount': amount}
+
+    return render(request, 'accounts/update_amount.html', context)
+
+
+def deleteAmount(request,pk):
+    amount = Amount.objects.get(id=pk)
+
+    if request.method == 'POST':
+        amount.delete()
+        return redirect('/amounts/')
+
+    context = {'amount': amount}
+
+    return render(request, 'accounts/delete_amount.html', context)
 
 @login_required(login_url='login')
 def settings(request):

@@ -34,8 +34,8 @@ urlpatterns = [
 
 
     path('create_amount/', views.createAmount, name="create_amount"),
-
-
+    path('update_amount/<str:pk>/', views.updateAmount, name="update_amount"),
+    path('delete_amount/<str:pk>/', views.deleteAmount, name="delete_amount"),
 
     path('all_user/', views.allUser, name="all_user"),
 

@@ -89,6 +89,7 @@ class Amount(models.Model):
 
 
 
+
 class TotalCost(models.Model):
     date = models.DateField(auto_now_add=True, auto_now=False, null=True, blank=True)
     title = models.CharField(max_length=200, null=True, blank=True)

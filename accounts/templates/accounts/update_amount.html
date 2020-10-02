@@ -1,0 +1,46 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="container">
+<div class="row center">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md">
+
+                        <table class="table table-borderless table-hover">
+                            <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td>{{form.profile}}</td>
+                            </tr>
+                            <tr>
+                                <td>Amount:</td>
+                                <td>{{form.amount}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status:</td>
+                                <td>{{form.status}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+<!--                {{ form.management_form }}-->
+<!--                    {{form}}-->
+
+                <hr>
+                <input type="submit" name="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+<br>
+{% endblock %}

@@ -141,6 +141,11 @@
                     <th>Member's Name</th>
                     <th>Total Amount</th>
                     <th>Status</th>
+
+                    {% if request.user.is_staff %}
+                    <th>Actions</th>
+                    {% endif %}
+
                 </tr>
                 </thead>
                 <tbody id="myTable">
@@ -154,6 +159,14 @@
                     <td>{{a.profile.name}}</td>
                     <td>{{a.amount}}</td>
                     <td>{{a.status}}</td>
+
+                    {% if request.user.is_staff %}
+
+                    <td> <a href="{% url  'update_amount' a.id %}" class="btn btn-info" role="button" aria-disabled="true">Edit</a>
+<a href="{% url  'delete_amount' a.id %}" class="btn btn-danger" role="button" aria-disabled="true">Delete</a></td>
+
+                    {% endif %}
+
                 </tr>
 
                 {% else %}
@@ -163,6 +176,12 @@
                     <td>{{a.profile.name}}</td>
                     <td>{{a.amount}}</td>
                     <td>{{a.status}}</td>
+                    {% if request.user.is_staff %}
+
+                    <td> <a href="{% url  'update_amount' a.id %}" class="btn btn-info" role="button" aria-disabled="true">Edit</a>
+<a href="#" class="btn btn-danger" role="button" aria-disabled="true">Delete</a></td>
+                    {% endif %}
+
                 </tr>
                 {% endif%}
 
@@ -176,6 +195,9 @@
                     <th>Member's Name</th>
                     <th>Amount: {{total_amount}}</th>
                     <th>Status</th>
+                    {% if request.user.is_staff %}
+                    <th>Actions</th>
+                    {% endif %}
                 </tr>
                 </tfoot>
 
