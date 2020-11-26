@@ -368,53 +368,28 @@ def members(request):
 
     pro = Profile.objects.values_list('id')
 
-    # p_id = profile[i][j]
-    # amount : (2,),(3,),
-
     habijabi = []
 
-    print("********************************")
     for i in pro:
         for j in i:
-            print("///////////////////////////")
-            print(j)
 
             p = Profile.objects.get(id=j)
 
             profile_id = j
             name = p.name
-            print("Name: " + name)
             phone = p.phone
-            print("Phone: " + phone)
             joining_date = p.joining_date
-            print(joining_date)
-
-            print(p)
-
-            # for p in profile:
 
             amounts = p.amount_set.all()
-            print(amounts)
-            print("Amounts")
             total_amount = sum([item.amount for item in amounts])
 
             pending = amounts.filter(status='Pending')
-            print("Pending")
-            print(pending)
             total_pending = sum([item.amount for item in pending])
-            print("Total Pending")
-            print(total_pending)
 
             complete = amounts.filter(status='Complete')
-            print("Complete")
-            print(complete)
             total_complete = sum([item.amount for item in complete])
-            print("Total Complete")
-            print(total_complete)
 
             total_pending_count = amounts.filter(status='Pending').count()
-            print("Total Pending Count")
-            print(total_pending_count)
 
             context = {'profile': profile, 'profile_id': profile_id, 'name': name, 'joining_date': joining_date,
                        'phone': phone, 'total_pending_count': total_pending_count, 'total_pending': total_pending,

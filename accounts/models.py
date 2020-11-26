@@ -21,24 +21,35 @@ class Profile(models.Model):
         ('Islam', 'Islam'),
         ('Hindu', 'Hindu'),
     )
+    OCCUPATION_STATUS = (
+        ('Govt.','Govt.'),
+        ('Semi Govt.','Semi Govt.'),
+        ('Service','Service'),
+        ('Business','Business'),
+        ('Student','Student'),
+        ('House Wife','House Wife'),
+    )
 
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     profile_pic = models.ImageField(default="profile.jpg", null=True, blank=True)
-    joining_date = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
+    joining_date = models.DateField(auto_now_add=False, auto_now=False, null=True)
 
-    father_name = models.CharField(max_length=200, null=True)
-    mother_name = models.CharField(max_length=200, null=True)
-    nationality = models.CharField(max_length=200, null=True)
+    father_name = models.CharField(max_length=200, null=True, blank=True)
+    mother_name = models.CharField(max_length=200, null=True, blank=True)
+    nationality = models.CharField(max_length=200, null=True, blank=True)
     gender = models.CharField(max_length=200, null=True, choices=GENDER_STATUS)
 
-    occupation = models.CharField(max_length=200, null=True, blank=True)
-    nid = models.CharField(max_length=200, null=True, blank=True)
-    member_id = models.IntegerField(default=0, null=True, blank=True)
-    phone = models.CharField(max_length=200, null=True, blank=True)
-    email = models.CharField(max_length=200, null=True, blank=True)
+    occupation = models.CharField(max_length=200, null=True, choices=OCCUPATION_STATUS)
+    designation = models.CharField(max_length=200, null=True, blank=True)
+    company = models.CharField(max_length=200, null=True, blank=True)
 
-    dob = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
+    nid = models.CharField(max_length=200, null=True)
+    member_id = models.IntegerField(default=0, null=True)
+    phone = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+
+    dob = models.DateField(auto_now_add=False, auto_now=False, null=True)
 
     marital_status = models.CharField(max_length=200, null=True, choices=MARITAL_STATUS)
     religion = models.CharField(max_length=200, null=True, choices=RELIGION_STATUS)
@@ -48,7 +59,7 @@ class Profile(models.Model):
 
     #Nominee
 
-    nominee_name = models.CharField(max_length=200, null=True, blank=True)
+    nominee_name = models.CharField(max_length=200, null=True)
     relation = models.CharField(max_length=200, null=True, blank=True)
     nominee_father_name = models.CharField(max_length=200, null=True, blank=True)
     nominee_mother_name = models.CharField(max_length=200, null=True, blank=True)
