@@ -322,6 +322,9 @@ def individualPendingAmounts(request, pk):
     total_pending_count = amountprofile.filter(status='Pending').count()
     pending = amountprofile.filter(status='Pending')
 
+    total_pending_amount = 0
+    pending_profile = 0
+
     if pending:
         total_pending_amount = sum([item.amount for item in pending])
 
