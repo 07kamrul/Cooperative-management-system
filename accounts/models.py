@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 
 from datetime import datetime, date
 from django.utils import timezone
@@ -33,54 +34,56 @@ class Profile(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     profile_pic = models.ImageField(default="profile.jpg", null=True, blank=True)
-    joining_date = models.DateField(auto_now_add=False, auto_now=False, null=True)
+    joining_date = models.DateField(auto_now_add=False, auto_now=False, null=True,)
 
-    father_name = models.CharField(max_length=200, null=True, blank=True)
-    mother_name = models.CharField(max_length=200, null=True, blank=True)
-    nationality = models.CharField(max_length=200, null=True, blank=True)
-    gender = models.CharField(max_length=200, null=True, choices=GENDER_STATUS)
+    father_name = models.CharField(max_length=200, blank=True,default="")
+    mother_name = models.CharField(max_length=200, blank=True,default="")
+    nationality = models.CharField(max_length=200, blank=True,default="")
 
-    occupation = models.CharField(max_length=200, null=True, choices=OCCUPATION_STATUS)
-    designation = models.CharField(max_length=200, null=True, blank=True)
-    company = models.CharField(max_length=200, null=True, blank=True)
+    gender = models.CharField(max_length=200, choices=GENDER_STATUS,default="")
 
-    nid = models.CharField(max_length=200, null=True)
-    member_id = models.IntegerField(default=0, null=True)
-    phone = models.CharField(max_length=200, null=True)
-    email = models.CharField(max_length=200, null=True)
+    occupation = models.CharField(max_length=200, choices=OCCUPATION_STATUS,default="")
+    designation = models.CharField(max_length=200, blank=True,default="")
+    company = models.CharField(max_length=200,  blank=True,default="")
 
-    dob = models.DateField(auto_now_add=False, auto_now=False, null=True)
+    nid = models.CharField(max_length=200,default="" )
+    member_id = models.IntegerField(default=0)
+    phone = models.CharField(max_length=200,default="" )
+    email = models.CharField(max_length=200,default="" )
 
-    marital_status = models.CharField(max_length=200, null=True, choices=MARITAL_STATUS)
-    religion = models.CharField(max_length=200, null=True, choices=RELIGION_STATUS)
+    dob = models.DateField(auto_now_add=False,null=True, auto_now=False )
 
-    permanent_address = models.CharField(max_length=200, null=True, blank=True)
-    present_address = models.CharField(max_length=200, null=True, blank=True)
+    marital_status = models.CharField(max_length=200,default="", choices=MARITAL_STATUS)
+    religion = models.CharField(max_length=200,default="", choices=RELIGION_STATUS)
+
+    permanent_address = models.CharField(max_length=200,default="",  blank=True)
+    present_address = models.CharField(max_length=200,default="",  blank=True)
 
     #Nominee
 
-    nominee_name = models.CharField(max_length=200, null=True)
-    relation = models.CharField(max_length=200, null=True, blank=True)
-    nominee_father_name = models.CharField(max_length=200, null=True, blank=True)
-    nominee_mother_name = models.CharField(max_length=200, null=True, blank=True)
-    nominee_phone = models.CharField(max_length=15, null=True, blank=True)
-    nominee_dob = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
-    nominee_gender = models.CharField(max_length=200, null=True, choices=GENDER_STATUS)
-    nominee_marital_status = models.CharField(max_length=200, null=True, choices=MARITAL_STATUS)
-    nominee_religion = models.CharField(max_length=200, null=True, choices=RELIGION_STATUS)
-    nominee_nid = models.CharField(max_length=200, null=True, blank=True)
-    nominee_present_address = models.CharField(max_length=200, null=True, blank=True)
-    nominee_permanent_address = models.CharField(max_length=200, null=True, blank=True)
+    nominee_name = models.CharField(max_length=200,default="" )
+    relation = models.CharField(max_length=200,default="", blank=True)
+    nominee_father_name = models.CharField(max_length=200,default="", blank=True)
+    nominee_mother_name = models.CharField(max_length=200,default="", blank=True)
+    nominee_phone = models.CharField(max_length=15,default="", blank=True)
+    nominee_dob = models.DateField(auto_now_add=False, auto_now=False, null=True,  blank=True)
+    nominee_gender = models.CharField(max_length=200,default="", choices=GENDER_STATUS)
+    nominee_marital_status = models.CharField(max_length=200,default="", choices=MARITAL_STATUS)
+    nominee_religion = models.CharField(max_length=200,default="", choices=RELIGION_STATUS)
+    nominee_nid = models.CharField(max_length=200,default="", blank=True)
+    nominee_present_address = models.CharField(max_length=200,default="",  blank=True)
+    nominee_permanent_address = models.CharField(max_length=200 ,default="", blank=True)
 
     #Bank
 
-    account_no = models.CharField(max_length=200, null=True, blank=True)
-    bank_name = models.CharField(max_length=200, null=True, blank=True)
-    branch_address = models.CharField(max_length=200, null=True, blank=True)
+    account_no = models.CharField(max_length=200, default="", blank=True)
+    bank_name = models.CharField(max_length=200, default="", blank=True)
+    branch_address = models.CharField(max_length=200,default="", blank=True)
 
 
     def __str__(self):
         return self.name
+        # return self.user.username
 
 
 

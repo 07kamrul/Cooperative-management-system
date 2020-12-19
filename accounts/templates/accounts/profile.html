@@ -19,7 +19,7 @@
 
 <div class="row">
     <div class="col-md-3">
-        <div class="card card-body">
+        <div class="shadow p-3 mb-5 bg-white rounded">
             <h5>Profile Picture</h5>
             <hr>
             <img class="profile-pic" src="{{profile.profile_pic.url}}" alt="">
@@ -33,7 +33,7 @@
 
         {% if total_pending == 0 %}
 
-        <div class="card card-body zoom" style="color:black;">
+        <div class="shadow p-3 mb-5 bg-white rounded" style="color:black;">
 
             <h3>Total Pending: {{total_pending}}</h3>
             <hr>
@@ -45,7 +45,7 @@
 
         </div>
         {% else %}
-        <div class="card card-body zoom" style="color:red;">
+        <div class="shadow p-3 mb-5 bg-white rounded" style="color:red;">
 
             <h3>Total Pending: {{total_pending}}</h3>
             <hr>
@@ -60,7 +60,7 @@
 
 
         <br>
-        <div class="card card-body zoom">
+        <div class="shadow p-3 mb-5 bg-white rounded">
             <h5>Total Complete Amount: {{complete_count}}</h5>
             <hr>
             <h1 style="text-align:center;padding:10px">{{total_complete_amount}}</h1>
@@ -71,7 +71,7 @@
     </div>
 
     <div class="col-md">
-        <div class="card card-body">
+        <div class="shadow p-3 mb-5 bg-white rounded">
             <div class="row">
                 <div class="col-md">
                     <h4>Personal Information</h4>

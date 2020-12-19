@@ -36,72 +36,115 @@
 
 <hr>
 
-<div class="row">
+<div class="card-deck">
 
-    <div class="col zoom">
-        <div class="col-md">
-            <div class="card text-center text white mb-3" id="orders-pending">
-                <div class="card-header">
-                    <h5 class="card-title">Total Members</h5>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title"><a style="color:black;" href="members/">{{total_member}}</a></h3>
-                </div>
-            </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 card text-white bg-info">
+        <div class="card-header text-center text-uppercase font-weight-bold">Total Members</div>
+        <div class="card-body text-center">
+            <h3 class="card-text text-center"><a class="text-light" href="members/">00{{total_member}}</a></h3>
         </div>
     </div>
 
-    <div class="col zoom">
-        <div class="col-md">
-            <div class="card text-center text white mb-3" id="total-orders">
-                <div class="card-header">
-                    <h5 class="card-title">Total Amount</h5>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">BDT: <a style="color:black;" href="amounts/">{{total_amount}}</a></h3>
-                </div>
-            </div>
-        </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 card text-white bg-info">
+        <div class="card-header text-center text-uppercase font-weight-bold">Total Amounts</div>
+          <div class="card-body text-center">
+            <h3 class="card-text text-center"><a class="text-light" href="amounts/">BDT: {{total_amount}}</a></h3>
+          </div>
     </div>
 
-    <div class="col zoom">
-        <div class="col-md">
-            <div class="card text-center text white mb-3" id="orders-delivered">
-                <div class="card-header">
-                    <h5 class="card-title">Complete Amount</h5>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">BDT: {{total_complete_amount}}</h3>
-                </div>
-            </div>
-        </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 card text-white bg-info">
+    <div class="card-header text-center text-uppercase font-weight-bold">Complete Amount</div>
+      <div class="card-body text-center">
+        <h3 class="card-text text-center">BDT: {{total_complete_amount}}</h3>
+      </div>
     </div>
 
-    <div class="col zoom">
-        <div class="col-md">
-            <div class="card text-center text white mb-3" id="pending">
-                <div class="card-header">
-                    <h5 class="card-title">Pending Amount</h5>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">BDT: <a style="color:black;"
-                                                   href="pending_amount/">{{total_pending_amount}}</a></h3>
-                </div>
-            </div>
-        </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 card text-white bg-info">
+    <div class="card-header text-center text-uppercase font-weight-bold">Pending Amount</div>
+      <div class="card-body text-center">
+        <h3 class="card-text text-center"><a class="text-light" href="pending_amount/">BDT: {{total_pending_amount}}</a></a></h3>
+      </div>
     </div>
 
-    <div class="col zoom">
-        <div class="col-md">
-            <div class="card text-center text white mb-3" id="pending">
-                <div class="card-header">
-                    <h5 class="card-title">Total Cost</h5>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">BDT: <a style="color:black;"
-                                                   href="total_cost/">{{total_cost}}</a></h3>
-                </div>
-            </div>
-        </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 card text-white bg-info">
+    <div class="card-header text-center text-uppercase font-weight-bold">Total Costs</div>
+      <div class="card-body text-center">
+        <h3 class="card-text text-center"><a class="text-light" href="total_cost/">BDT: {{total_cost}}</a></h3>
+      </div>
     </div>
+
+
 </div>
+
+
+
+    <!--    -->
+<!--    <div class="col zoom">-->
+<!--        <div class="col-md">-->
+<!--            <div class="card text-center text white mb-3" id="orders-pending">-->
+<!--                <div class="card-header">-->
+<!--                    <h5 class="card-title">Total Members</h5>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <h3 class="card-title"><a style="color:black;" href="members/">{{total_member}}</a></h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="col zoom">-->
+<!--        <div class="col-md">-->
+<!--            <div class="card text-center text white mb-3" id="total-orders">-->
+<!--                <div class="card-header">-->
+<!--                    <h5 class="card-title">Total Amount</h5>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <h3 class="card-title">BDT: <a style="color:black;" href="amounts/">{{total_amount}}</a></h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="col zoom">-->
+<!--        <div class="col-md">-->
+<!--            <div class="card text-center text white mb-3" id="orders-delivered">-->
+<!--                <div class="card-header">-->
+<!--                    <h5 class="card-title">Complete Amount</h5>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <h3 class="card-title">BDT: {{total_complete_amount}}</h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="col zoom">-->
+<!--        <div class="col-md">-->
+<!--            <div class="card text-center text white mb-3" id="pending">-->
+<!--                <div class="card-header">-->
+<!--                    <h5 class="card-title">Pending Amount</h5>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <h3 class="card-title">BDT: <a style="color:black;"-->
+<!--                                                   href="pending_amount/">{{total_pending_amount}}</a></h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="col zoom">-->
+<!--        <div class="col-md">-->
+<!--            <div class="card text-center text white mb-3" id="pending">-->
+<!--                <div class="card-header">-->
+<!--                    <h5 class="card-title">Total Cost</h5>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <h3 class="card-title">BDT: <a style="color:black;"-->
+<!--                                                   href="total_cost/">{{total_cost}}</a></h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+

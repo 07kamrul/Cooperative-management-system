@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-md-6">
         <h5>Admin Panel:</h5>
-        <div class="card card-body">
+        <div class="shadow p-3 mb-5 bg-white rounded">
             <table class="table table-sm">
                 <thead class="thead-dark">
                 <tr>
@@ -28,7 +28,7 @@
 
     <div class="col-md-6">
         <h5>About us:</h5>
-        <div class="card card-body">
+        <div class="shadow p-3 mb-5 bg-white rounded">
 
         </div>
     </div>
@@ -40,14 +40,14 @@
 
     <div class="col-md-6">
         <h5>Vision:</h5>
-        <div class="card card-body">
+        <div class="shadow p-3 mb-5 bg-white rounded">
 
         </div>
     </div>
 
     <div class="col-md-6">
         <h5>Pending Amount:</h5>
-        <div class="card card-body">
+        <div class="shadow p-3 mb-5 bg-white rounded">
             <table class="table table-sm table-striped table-hover">
                 <thead class="thead-dark">
                 <tr>
@@ -92,51 +92,51 @@
     <div class="row">
         <div class="col-md">
             <center><h5>LAST Month Amounts Details</h5></center>
-            <div class="card card-body">
+            <div class="shadow p-3 mb-5 bg-white rounded">
                 <table class="table table-sm table-striped table-hover">
 
                     <thead class="thead-dark">
-                    <tr>
-                        <th>Payment Date</th>
-                        <th>Member's Name</th>
-                        <th>Total Amount</th>
-                        <th>Status</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+                        <tr>
+                            <th>Payment Date</th>
+                            <th>Member's Name</th>
+                            <th>Total Amount</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                    {% for a in amount %}
+                        {% for a in amount %}
 
-                    {% if a.status == 'Pending' %}
+                        {% if a.status == 'Pending' %}
 
-                    <tr class="table-danger">
-                        <td>{{a.date}}</td>
-                        <td>{{a.profile.name}}</td>
-                        <td>{{a.amount}}</td>
-                        <td>{{a.status}}</td>
-                    </tr>
+                        <tr class="table-danger">
+                            <td>{{a.date}}</td>
+                            <td>{{a.profile.name}}</td>
+                            <td>{{a.amount}}</td>
+                            <td>{{a.status}}</td>
+                        </tr>
 
-                    {% else %}
+                        {% else %}
 
-                    <tr class="table-success">
-                        <td>{{a.date}}</td>
-                        <td>{{a.profile.name}}</td>
-                        <td>{{a.amount}}</td>
-                        <td>{{a.status}}</td>
-                    </tr>
-                    {% endif%}
+                        <tr class="table-success">
+                            <td>{{a.date}}</td>
+                            <td>{{a.profile.name}}</td>
+                            <td>{{a.amount}}</td>
+                            <td>{{a.status}}</td>
+                        </tr>
+                        {% endif%}
 
-                    {% endfor %}
-                    </tbody>
+                        {% endfor %}
+                        </tbody>
 
-                    <tfoot class="thead-dark">
+                        <tfoot class="thead-dark">
 
-                    <tr>
-                        <th>Payment Date</th>
-                        <th>Member's Name</th>
-                        <th>Amount: {{total_amount}}</th>
-                        <th>Status</th>
-                    </tr>
+                        <tr>
+                            <th>Payment Date</th>
+                            <th>Member's Name</th>
+                            <th>Amount: {{total_amount}}</th>
+                            <th>Status</th>
+                        </tr>
                     </tfoot>
                 </table>
                 <center><h4><a href="amounts/" style="color:black;">See more...</a></h4></center>

@@ -29,6 +29,7 @@
   transform: scale(1.2);
 }
 
+/*
 .dropbtn {
   background-color: navbar-dark bg-dark;
   color: white;
@@ -57,12 +58,15 @@
   text-decoration: none;
   display: block;
 }
+*/
 
+/*
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: navbar-dark bg-dark;}
+*/
 
 .topnav-right {
   float: right;
@@ -76,6 +80,7 @@ body {
 .navbar .nav-item:not(:last-child) {
   margin-right: 35px;
 }
+/*
 
 .dropdown-toggle::after {
    transition: transform 0.15s linear;
@@ -88,5 +93,17 @@ body {
 .dropdown-menu {
   margin-top: 0;
 }
+*/
 
+.card {
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 1.5em;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
 

@@ -72,7 +72,7 @@ def registerPage(request):
 
     form = CreateUserForm()
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
@@ -421,8 +421,6 @@ def createProfile(request):
 
 
 @login_required(login_url='login')
-# @allowed_users(allowed_roles=['admin'])
-
 def updateProfile(request, pk):
     profile = Profile.objects.get(id=pk)
     form = ProfileForm(instance=profile)
@@ -439,14 +437,12 @@ def updateProfile(request, pk):
 
 
 @login_required(login_url='login')
-# @allowed_users(allowed_roles=['admin'])
-
 def updatePersonalInformation(request, pk):
     profile = Profile.objects.get(id=pk)
-    form = ProfileForm(instance=profile)
+    form = PersonalInformationForm(instance=profile)
 
     if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        form = PersonalInformationForm(request.POST, request.FILES, instance=profile)
 
         if form.is_valid():
             form.save()
@@ -457,14 +453,12 @@ def updatePersonalInformation(request, pk):
 
 
 @login_required(login_url='login')
-# @allowed_users(allowed_roles=['admin'])
-
 def updateNomineeInformation(request, pk):
     profile = Profile.objects.get(id=pk)
-    form = ProfileForm(instance=profile)
+    form = NomineeInformationForm(instance=profile)
 
     if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        form = NomineeInformationForm(request.POST, request.FILES, instance=profile)
 
         if form.is_valid():
             form.save()
@@ -475,14 +469,12 @@ def updateNomineeInformation(request, pk):
 
 
 @login_required(login_url='login')
-# @allowed_users(allowed_roles=['admin'])
-
 def updatebankinformation(request, pk):
     profile = Profile.objects.get(id=pk)
-    form = ProfileForm(instance=profile)
+    form = BankInformationForm(instance=profile)
 
     if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        form = BankInformationForm(request.POST, request.FILES, instance=profile)
 
         if form.is_valid():
             form.save()
@@ -508,6 +500,7 @@ def accountSettings(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
 def createAmount(request):
+    
     form = AmountForm()
 
     if request.method == 'POST':

@@ -13,15 +13,12 @@
 
 
 
-
-
-
 </style>
-
+<br>
 <div class="container">
 
     <div class="col-md">
-        <div class="card card-body">
+        <div class="shadow p-3 mb-5 bg-white rounded">
             <h4>Nominee Information</h4>
             <hr>
             <form action="" method="post" enctype="multipart/form-data">
@@ -32,34 +29,34 @@
 
                         <table class="table table-borderless table-hover">
                             <tbody>
-                            <tr>
-                                <td>Name:</td>
-                                <td>{{form.nominee_name}}</td>
-                            </tr>
-                            <tr>
-                                <td>Father's Name:</td>
-                                <td>{{form.relation}}</td>
-                            </tr>
-                            <tr>
-                                <td>Mother's Name:</td>
-                                <td>{{form.nominee_nid}}</td>
-                            </tr>
-                            <tr>
-                                <td>Phone:</td>
-                                <td>{{form.nominee_phone}}</td>
-                            </tr>
-                            <tr>
-                                <td>Marital Status:</td>
-                                <td>{{form.nominee_father_name}}</td>
-                            </tr>
-                            <tr>
-                                <td>Relation with Nominee:</td>
-                                <td>{{form.nominee_mother_name}}</td>
-                            </tr>
-                            <tr>
-                                <td>Gender:</td>
-                                <td>{{form.nominee_gender}}</td>
-                            </tr>
+                                <tr>
+                                    <td>Nominee Name:</td>
+                                    <td>{{form.nominee_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Father's Name:</td>
+                                    <td>{{form.nominee_father_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mother's Name:</td>
+                                    <td>{{form.nominee_mother_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Phone:</td>
+                                    <td>{{form.nominee_phone}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Marital Status:</td>
+                                    <td>{{form.nominee_father_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Relation with Nominee:</td>
+                                    <td>{{form.relation}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender:</td>
+                                    <td>{{form.nominee_gender}}</td>
+                                </tr>
                             </tbody>
                         </table>
 
@@ -68,48 +65,43 @@
 
                         <table class="table table-borderless table-hover">
                             <tbody>
-                            <tr>
-                                <td>NID:</td>
-                                <td>{{form.nominee_nid}}</td>
-                            </tr>
-                            <tr>
-                                <td>Date of Birth:</td>
-                                <td>{{form.nominee_dob}}</td>
-                            </tr>
-                            <tr>
-                                <td>Phone:</td>
-                                <td>{{form.nominee_phone}}</td>
-                            </tr>
-                            <tr>
-                                <td>Marital Status:</td>
-                                <td>{{form.nominee_marital_status}}</td>
-                            </tr>
-                            <tr>
-                                <td>Religion:</td>
-                                <td>{{form.nominee_religion}}</td>
-                            </tr>
-                            <tr>
-                                <td>Permanent Address:</td>
-                                <td>{{form.}}</td>
-                            </tr>
-                            <tr>
-                                <td>Present Address:</td>
-                                <td>{{form.nominee_permanent_address}}</td>
-                            </tr>
+                                <tr>
+                                    <td>NID:</td>
+                                    <td>{{form.nominee_nid}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth:</td>
+                                    <td>{{form.nominee_dob}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Phone:</td>
+                                    <td>{{form.nominee_phone}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Marital Status:</td>
+                                    <td>{{form.nominee_marital_status}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Religion:</td>
+                                    <td>{{form.nominee_religion}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Permanent Address:</td>
+                                    <td>{{form.nominee_present_address}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Present Address:</td>
+                                    <td>{{form.nominee_permanent_address}}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
                 <hr>
-                <div class="row">
-                    <div class="col-md">
-                        <h2>Please check again and confim to submit update button</h2>
-
-                    </div>
-                    <div class="col-md">
-                        <input type="submit">
-                    </div>
+                
+                <div class="d-flex justify-content-center">
+                    <input type="submit" class="btn btn-success btn-lg">
                 </div>
 
             </form>

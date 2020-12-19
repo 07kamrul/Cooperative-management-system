@@ -39,3 +39,20 @@ class DepositeForm(ModelForm):
     class Meta:
         model = Deposite
         fields = '__all__'
+
+class PersonalInformationForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['father_name','mother_name','nid','phone','email','marital_status','occupation','designation','company','permanent_address','present_address']
+
+
+class NomineeInformationForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['nominee_name','relation','nominee_father_name','nominee_mother_name','nominee_phone','nominee_dob','nominee_gender','nominee_marital_status','nominee_religion','nominee_nid','nominee_present_address','nominee_permanent_address']
+
+
+class BankInformationForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['account_no','bank_name','branch_address']

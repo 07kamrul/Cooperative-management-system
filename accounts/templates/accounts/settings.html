@@ -14,7 +14,7 @@
 <br>
 <div class="row">
 	<div class="col-md-3">
-		<div class="card card-body">
+		<div class="shadow p-3 mb-5 bg-white rounded">
 			<a class="btn btn-warning" href="{% url 'your_profile' %}"> &#8592; Back to Profile</a>
 			<hr>
 			<h3 style="text-align: center">Account Settings</h3>
@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	<div class="col-md-9">
-		<div class="card card-body">
+		<div class="shadow p-3 mb-5 bg-white rounded">
 
 			<form method="POST" action="" enctype="multipart/form-data">
 				{% csrf_token %}

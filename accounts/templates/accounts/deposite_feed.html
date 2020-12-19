@@ -3,12 +3,13 @@
 {% block content %}
 
 <style>
-	.profile-pic{
-		max-width: 200px;
-		max-height:200px;
-		margin: 0 auto;
-		border-radius: 50%;
-	}
+.profile-pic{
+    max-width: 200px;
+    max-height:200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
 .img-fluid {
     max-width: 100%;
     height: auto;
@@ -36,17 +37,17 @@
 
 <div class="row">
 
-    <div class="col-3 card">
+    <div class="col-3 shadow p-3 mb-5 bg-white rounded">
         <h1>Left side bar</h1>
     </div>
 
-    <div class="parent col-6 card" style="height:550px">
+    <div class="parent col-6 shadow p-3 mb-5 bg-white rounded" style="height:550px">
 
         <div class="child col-md">
 
             {% for deposite in deposit_posts %}
 
-            <div class="card" >
+            <div class="shadow p-3 mb-5 bg-white rounded" >
                 <img src="{{deposite.diposite_pic.url}}" height="200" width="auto" alt="Responsive image">
                 <div class="card-body">
                     <div class="row">
@@ -65,61 +66,13 @@
             <br>
             {% endfor %}
 
-
-            <!--            <div class="card" style="width: auto;">-->
-            <!--                <img src="..." class="img-fluid" alt="Responsive image">-->
-            <!--                <div class="card-body">-->
-            <!--                    <h5 class="card-title">Member Name</h5>-->
-            <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
-            <!--                        card's content.</p>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            <br>-->
-
-            <!--            <div class="card" style="width: auto;">-->
-            <!--                <img src="..." class="img-fluid" alt="Responsive image">-->
-            <!--                <div class="card-body">-->
-            <!--                    <h5 class="card-title">Member Name</h5>-->
-            <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
-            <!--                        card's content.</p>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            <br>-->
-
-            <!--            <div class="card" style="width: auto;">-->
-            <!--                <img src="..." class="img-fluid" alt="Responsive image">-->
-            <!--                <div class="card-body">-->
-            <!--                    <h5 class="card-title">Member Name</h5>-->
-            <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
-            <!--                        card's content.</p>-->
-            <!--                </div>-->
-            <!--            </div>-->
-
-            <!--            -->
-            <!--            <div class="card text-center text white mb-6" id="orders-pending">-->
-            <!--                <div class="card-header row">-->
-            <!--                    <div class="col">-->
-            <!--                        <h5 class="card-title">Member Name</h5>-->
-            <!--                    </div>-->
-            <!--                    <div class="col">-->
-            <!--                        <h5 class="card-title">Member Id</h5>-->
-            <!--                    </div>-->
-            <!--                    <div class="col">-->
-            <!--                        <h5 class="card-title">Diposite Date</h5>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="card-body">-->
-            <!--                    <h3 class="card-title"><a style="color:black;" href="#">Hello</a></h3>-->
-            <!--                </div>-->
-            <!--            </div>-->
-
         </div>
 
 
     </div>
 
 
-    <div class="col-3 card">
+    <div class="col-3 shadow p-3 mb-5 bg-white rounded">
         <h1>Right side bar</h1>
     </div>
 

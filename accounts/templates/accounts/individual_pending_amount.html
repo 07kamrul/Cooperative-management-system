@@ -2,78 +2,64 @@
 
 {% block content %}
 
-<center>
-    <br>
-    <div class="row">
+<br>
 
-        <div class="col zoom">
-            <div class="col-md">
-                <div class="card text-center text white mb-3" id="total-orders">
-                    <div class="card-header">
-                        <h4 class="card-title">{{profile.name}}</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Member ID: {{profile.member_id}}</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="col zoom">
-            <div class="col-md">
-                <div class="card text-center text white mb-3" id="total-orders">
-                    <div class="card-header">
-                        <h4 class="card-title">Total Pending Amount</h4>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">BDT {{total_pending_amount}}</h3>
-                    </div>
-                    <a href="{% url 'create_amount' %}" class="btn btn-primary btn-sm btn-block">Create Amount</a>
-                </div>
-            </div>
-        </div>
+<div class="card-deck">
 
-        <!--search-->
-
-        <div class="col">
-            <div class="card card-body">
-                <table>
-                    <tr>
-                        <td>From Date:</td>
-                        <td><input class="form-control" id="from_date" type="date" placeholder="From Date"></td>
-                    </tr>
-                    <tr>
-                        <td>To Date:</td>
-                        <td><input class="form-control" id="to_date" type="date" placeholder="To Date"></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 card text-white bg-info">
+    <div class="card-header text-center text-uppercase font-weight-bold">{{profile.name}}</div>
+      <div class="card-body text-center">
+            <h3 class="card-title">{{profile.member_id}}</h3>
+      </div>
     </div>
 
-</center>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 card text-white bg-info">
+    <div class="card-header text-center text-uppercase font-weight-bold">Total Pending Amount</div>
+      <div class="card-body text-center">
+        <h3 class="card-text text-center">BDT: {{total_pending_amount}}</h3>
+      </div>
+    </div>
+
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 card text-black bg-light">
+        <table class="table">
+            <tr>
+                <td>From Date:</td>
+                <td><input class="form-control" id="from_date" onchange="onDateChange()" type="date" placeholder="From Date"></td>
+            </tr>
+                 <tr>
+                    <td>To Date:</td>
+                 <td><input class="form-control" id="to_date" onchange="onDateChange()" type="date" placeholder="To Date"></td>
+                 </tr>
+        </table>
+    </div>
+
+
+</div>
+
+<br>
+
 <div class="row">
     <div class="col">
-        <div class="card card-body">
+        <div class="shadow p-3 mb-5 bg-white rounded">
             <table id="example" class="table table-striped table-hover">
                 <thead class="thead-dark">
-                <tr>
-                    <th>Payment Date</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                </tr>
+                    <tr>
+                        <th>Payment Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
                 </thead>
                 <tbody id="myTable">
 
                 {% for p in amountprofile %}
 
                 {% if p.status == 'Pending' %}
-                <tr class="table-danger">
-                    <td>{{p.date}}</td>
-                    <td>{{p.amount}}</td>
-                    <td>{{p.status}}</td>
-                </tr>
+                    <tr class="table-danger">
+                        <td>{{p.date}}</td>
+                        <td>{{p.amount}}</td>
+                        <td>{{p.status}}</td>
+                    </tr>
 
                 {% endif%}
 
@@ -81,11 +67,11 @@
                 </tbody>
 
                 <tfoot class="thead-dark">
-                <tr>
-                    <th>Payment Date</th>
-                    <th>Amount: {{total_amount}}</th>
-                    <th>Status</th>
-                </tr>
+                    <tr>
+                        <th>Payment Date</th>
+                        <th>Amount: {{total_amount}}</th>
+                        <th>Status</th>
+                    </tr>
                 </tfoot>
 
             </table>

@@ -12,98 +12,77 @@
 	}
 
 
-
-
-
 </style>
+<br>
+
 
 <div class="container">
 
     <div class="col-md">
-        <div class="card card-body">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <h4>Personal Information</h4>
             <hr>
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
+<!--                {{form}}-->
 
                 <div class="row">
                     <div class="col-md">
 
                         <table class="table table-borderless table-hover">
                             <tbody>
-                            <tr>
-                                <td>Name:</td>
-                                <td>{{form.name}}</td>
-                            </tr>
-                            <tr>
-                                <td>Member ID:</td>
-                                <td>{{form.member_id}}</td>
-                            </tr>
-                            <tr>
-                                <td>NID:</td>
-                                <td>{{form.nid}}</td>
-                            </tr>
-                            <tr>
-                                <td>Joining Date:</td>
-                                <td>{{form.joining_date}}</td>
-                            </tr>
-                            <tr>
-                                <td>Father's Name:</td>
-                                <td>{{form.father_name}}</td>
-                            </tr>
-                            <tr>
-                                <td>Mother's Name:</td>
-                                <td>{{form.mother_name}}</td>
-                            </tr>
-                            <tr>
-                                <td>Nationality:</td>
-                                <td>{{form.nationality}}</td>
-                            </tr>
-                            <tr>
-                                <td>Gender:</td>
-                                <td>{{form.gender}}</td>
-                            </tr>
-                            <tr>
-                                <td>Occupation:</td>
-                                <td>{{form.occupation}}</td>
-                            </tr>
+                                <tr>
+                                    <td>NID:</td>
+                                    <td>{{form.nid}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Father's Name:</td>
+                                    <td>{{form.father_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mother's Name:</td>
+                                    <td>{{form.mother_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Occupation:</td>
+                                    <td>{{form.occupation}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Designation:</td>
+                                    <td>{{form.designation}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Company:</td>
+                                    <td>{{form.company}}</td>
+                                </tr>
                             </tbody>
                         </table>
 
                     </div>
 
                     <div class="col-md">
-
                         <table class="table table-borderless table-hover">
                             <tbody>
-                            <tr>
-                                <td>Date of Birth:</td>
-                                <td>{{form.dob}}</td>
-                            </tr>
-                            <tr>
-                                <td>Email:</td>
-                                <td>{{form.email}}</td>
-                            </tr>
-                            <tr>
-                                <td>Phone:</td>
-                                <td>{{form.phone}}</td>
-                            </tr>
-                            <tr>
-                                <td>Marital Status:</td>
-                                <td>{{form.marital_status}}</td>
-                            </tr>
-                            <tr>
-                                <td>Religion:</td>
-                                <td>{{form.religion}}</td>
-                            </tr>
-                            <tr>
-                                <td>Permanent Address:</td>
-                                <td>{{form.permanent_address}}</td>
-                            </tr>
-                            <tr>
-                                <td>Present Address:</td>
-                                <td>{{form.present_address}}</td>
-                            </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td>{{form.email}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Phone:</td>
+                                    <td>{{form.phone}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Marital Status:</td>
+                                    <td>{{form.marital_status}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Permanent Address:</td>
+                                    <td>{{form.permanent_address}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Present Address:</td>
+                                    <td>{{form.present_address}}</td>
+                                </tr>
                             </tbody>
                         </table>
 
@@ -111,14 +90,9 @@
                 </div>
 
                 <hr>
-                <div class="row">
-                    <div class="col-md">
-                        <h2>Please check again and confim to submit update button</h2>
 
-                    </div>
-                    <div class="col-md">
-                        <input type="submit">
-                    </div>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" class="btn btn-success btn-lg">
                 </div>
 
             </form>
