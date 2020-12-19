@@ -303,10 +303,10 @@ def pendingAmounts(request):
         total_pending_amount = sum([item.amount for item in pending])
         pending_profile = amount.count()
 
-    context = {'profile': profile, 'total_pending_amount': total_pending_amount, 'total_pending': total_pending,
+        context = {'profile': profile, 'total_pending_amount': total_pending_amount, 'total_pending': total_pending,
                'pending_profile': pending_profile, 'amount': amount}
 
-    return render(request, 'accounts/pending_amount.html', context)
+        return render(request, 'accounts/pending_amount.html', context)
 
 
 # Individual Pending Amount History
@@ -414,7 +414,7 @@ def createProfile(request):
 
         if form.is_valid():
             form.save()
-            # return redirect('/')
+            return redirect('members')
 
     context = {'form': form}
     return render(request, 'accounts/create_profile.html', context)
