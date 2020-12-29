@@ -5,8 +5,8 @@
 
 <style>
 	.profile-pic{
-		max-width: 200px;
-		max-height:200px;
+		max-width: 300px;
+		max-height: 300px;
 		margin: 0 auto;
 		border-radius: 50%;
 	}
@@ -22,11 +22,19 @@
         <div class="shadow p-3 mb-5 bg-white rounded">
             <h5>Profile Picture</h5>
             <hr>
-            <img class="profile-pic" src="{{profile.profile_pic.url}}" alt="">
+            <div class="text-center">
+
+                <img class="profile-pic" src="{{profile.profile_pic.url}}" alt="">
             <!--            <h1 style="text-align:center;padding:5px">Total</h1>-->
+            </div>
             <hr>
+
+           {% if request.user.id == profile.user.id  %}
+
             <a href="{% url 'settings' %}" class="btn btn-outline-info btn-sm btn-block">Account
                 Settings</a>
+
+            {% endif %}
         </div>
 
         <br>
@@ -76,9 +84,15 @@
                 <div class="col-md">
                     <h4>Personal Information</h4>
                 </div>
+
+                {% if request.user.id == profile.user.id  %}
+
                 <div class="col-md">
                     <a href="{% url 'personal_information_update' profile.id %}" class="btn btn-outline-info btn-md">Edit</a>
                 </div>
+
+                {% endif %}
+
             </div>
 
             <hr>
@@ -180,9 +194,14 @@
                 <div class="col-md">
                     <h4>Nominee Information</h4>
                 </div>
+            {% if request.user.id == profile.user.id  %}
+
                 <div class="col-md">
                     <a href="{% url 'nominee_information_update' profile.id %}" class="btn btn-outline-info btn-md">Edit</a>
                 </div>
+
+            {% endif %}
+
             </div>
             <hr>
 
@@ -259,9 +278,15 @@
                 <div class="col-md">
                     <h4>Bank Information</h4>
                 </div>
+
+                {% if request.user.id == profile.user.id  %}
+
                 <div class="col-md">
                     <a href="{% url 'bank_information_update' profile.id %}" class="btn btn-outline-info btn-md">Edit</a>
                 </div>
+
+                {% endif %}
+
             </div>
             <hr>
             <div class="row">
