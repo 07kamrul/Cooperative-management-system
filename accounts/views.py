@@ -54,8 +54,6 @@ def createDeposite(request):
 
 
 
-
-
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
 def allUser(request):
@@ -73,25 +71,60 @@ def registerPage(request):
     form = CreateUserForm()
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
+
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
+            email = form.cleaned_data.get('email')
+            password1 = form.cleaned_data.get('password1')
+            password2 = form.cleaned_data.get('password2')
 
-            group = Group.objects.get(name='members')
-            user.groups.add(group)
-            Profile.objects.create(
-                user = user,
-            )
+            user = authenticate(request, username=username, first_name=first_name, last_name=last_name,
+                                      email=email, password1=password1, password2=password2)
+
+            # username = form.cleaned_data.get('username')
+
+            # group = Group.objects.get(name='members')
+            # user.groups.add(group)
+            # Profile.objects.create(
+            #     user = user,
+            #     first_name = user.first_name,
+            #     last_name = user.last_name,
+            #     email = user.email,
+            # )
 
             # messages.success(request, 'Account was created for' + user)
 
             # return redirect('all_user')
 
-            return redirect('create_profile')
+            # return redirect('create_profile')
+            return redirect('members')
 
 
     context = {'form': form}
     return render(request, 'accounts/register.html', context)
+
+
+@login_required(login_url='login')
+# @allowed_users(allowed_roles=['admin'])
+def updateUser(request,pk):
+    user = User.objects.get(id=pk)
+    form = UpdateUserForm(instance=user)
+
+    if request.method == 'POST':
+
+        form = UpdateUserForm(request.POST, request.FILES, instance=user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('all_user')
+
+    context = {'form': form}
+    return render(request, 'accounts/updateUser.html', context)
+
+
 
 
 # Login
@@ -112,6 +145,7 @@ def loginPage(request):
 
     context = {}
     return render(request, 'accounts/login.html', context)
+    # return render(request, 'accounts/Regilogin.html', context)
 
 
 # Logout
@@ -128,8 +162,6 @@ def yourProfile(request):
         for p in pro:
             val = p
             for x in val.values():
-                print(x)
-
                 profile = Profile.objects.get(id=x)
                 amountprofile = profile.amount_set.all()
                 total_amount = sum([item.amount for item in amountprofile])
@@ -157,36 +189,6 @@ def yourProfile(request):
 # Dashboard
 @login_required(login_url='login')
 def home(request):
-    # return render(request, 'accounts/dashboard.html')
-
-    # Last Month Amount Details
-    # today = _datetime.date.today()
-    # month = today.month - 1
-    # print("Today")
-    # print(today)
-    # print(month)
-    #
-    # all_amount = Amount.objects.all()
-    # amount_month = all_amount.filter(date)
-    #
-    # mm = amount_month.date
-    # print(mm)
-    #
-    # # previous_month = datetime.now().month - 1
-    # #
-    # #
-    # # if previous_month == 0:
-    # #     previous_month = 12
-    # #
-    # #     print(previous_month)
-
-    # all_amount = Amount.objects.all()
-    # # amount_month = all_amount.filter(date)
-    #
-    # last_month = datetime.today() - timedelta(days=30)
-    # amount_month = all_amount.objects.filter(date=last_month)
-    #
-    # print(amount_month)
 
     profile = Profile.objects.all()
 

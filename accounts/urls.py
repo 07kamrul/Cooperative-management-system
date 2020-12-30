@@ -6,6 +6,8 @@ urlpatterns = [
     path('create_deposite/', views.createDeposite, name="create_deposite"),
 
     path('register/', views.registerPage, name="register"),
+    path('updateUser/<str:pk>/', views.updateUser, name="updateUser"),
+
     path('login/', views.loginPage, name="login"),
     path('logout/', views.logoutUser, name="logout"),
     path('your_profile/', views.yourProfile, name="your_profile"),

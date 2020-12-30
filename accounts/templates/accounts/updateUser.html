@@ -1,0 +1,133 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+
+<div class="container">
+
+    <div class="col-md">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+            <h4>Update User</h4>
+            <hr>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-md">
+
+                        <table class="table table-borderless table-hover">
+                            <tbody>
+                                <tr>
+                                    <td>User Name:</td>
+                                    <td>{{form.username}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Is Active:</td>
+                                    <td>{{form.is_active}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Is Staff:</td>
+                                    <td>{{form.is_staff}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Superuser:</td>
+                                    <td>{{form.is_superuser}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+               </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" class="btn btn-success btn-lg">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!--&lt;!&ndash; Font Icon &ndash;&gt;-->
+<!--<link rel="stylesheet" href="{% static '/fonts/material-icon/css/material-design-iconic-font.min.css' %}">-->
+
+<!--&lt;!&ndash; Main css &ndash;&gt;-->
+<!--<link rel="stylesheet" href="{% static '/css/style.css' %}">-->
+
+
+<!--<div class="main">-->
+
+<!--    &lt;!&ndash; Sign up form &ndash;&gt;-->
+<!--        <div class="container">-->
+<!--            <div class="signup-content">-->
+<!--                <div class="signup-form">-->
+<!--                    <h2 class="form-title">Update user</h2>-->
+<!--                    <form method="POST" class="register-form" id="register-form" action="">-->
+<!--                        {% csrf_token %}-->
+<!--&lt;!&ndash;                        {{form}}&ndash;&gt;-->
+
+<!--                        <div class="form-group">-->
+<!--                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>-->
+<!--                            <input type="text" value="" name="username" id="username" placeholder="Username"/>-->
+
+<!--&lt;!&ndash;                            {{form.username}}&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="firstname"><i class="zmdi zmdi-account material-icons-name"></i></label>-->
+<!--                            <input type="text" value="" name="first_name" id="first_name" placeholder="Enter First Name..."/>-->
+
+<!--&lt;!&ndash;                            {{form.first_name}}&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="lastname"><i class="zmdi zmdi-account material-icons-name"></i></label>-->
+<!--                            <input type="text" value="" name="last_name" id="last_name" placeholder="Enter Last Name..."/>-->
+
+<!--&lt;!&ndash;                            {{form.last_name}}&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="email"><i class="zmdi zmdi-email"></i></label>-->
+<!--                            <input type="email" value="" name="email" id="email" placeholder="Enter your email..."/>-->
+
+<!--&lt;!&ndash;                            {{form.email}}&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>-->
+<!--                            <input type="password" value="" name="password1" id="password1" placeholder="Enter Password..."/>-->
+
+<!--&lt;!&ndash;                            {{form.password1}}&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>-->
+<!--                            <input type="text" value="" name="password2" id="password2" placeholder="Confirm Password..."/>-->
+
+<!--&lt;!&ndash;                            {{form.password2}}&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term"/>-->
+<!--                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all-->
+<!--                                statements in <a href="#" class="term-service">Terms of service</a></label>-->
+<!--                        </div>-->
+<!--                        <div class="form-group form-button">-->
+<!--                            <input type="submit" name="signup" class="form-submit" value="Register"/>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--                {{form.errors}}-->
+<!--                <div class="signup-image">-->
+<!--                    <figure><img src="{% static 'images/signup-image.jpg' %}" alt="sing up image"></figure>-->
+<!--                    <a href="{% url 'login' %}" class="signup-image-link">I am already member</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; JS &ndash;&gt;-->
+<!--<script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>-->
+<!--<script src="{% static '/js/main.js' %}"></script>-->
+
+
+

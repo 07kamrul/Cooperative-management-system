@@ -5,10 +5,10 @@
 
 
 <!-- Font Icon -->
-<link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+<link rel="stylesheet" href="{% static '/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
 
 <!-- Main css -->
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
 
 
 <div class="main">
@@ -24,27 +24,39 @@
 
                         <div class="form-group">
                             <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            {{form.username}}
+                            <input type="text" value="" name="username" id="username" placeholder="Username"/>
+
+<!--                            {{form.username}}-->
                         </div>
                         <div class="form-group">
                             <label for="firstname"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            {{form.first_name}}
+                            <input type="text" value="" name="first_name" id="first_name" placeholder="Enter First Name..."/>
+
+<!--                            {{form.first_name}}-->
                         </div>
                         <div class="form-group">
                             <label for="lastname"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            {{form.last_name}}
+                            <input type="text" value="" name="last_name" id="last_name" placeholder="Enter Last Name..."/>
+
+<!--                            {{form.last_name}}-->
                         </div>
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            {{form.email}}
+                            <input type="email" value="" name="email" id="email" placeholder="Enter your email..."/>
+
+<!--                            {{form.email}}-->
                         </div>
                         <div class="form-group">
                             <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                            {{form.password1}}
+                            <input type="password" value="" name="password1" id="password1" placeholder="Enter Password..."/>
+
+<!--                            {{form.password1}}-->
                         </div>
                         <div class="form-group">
                             <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                            {{form.password2}}
+                            <input type="text" value="" name="password2" id="password2" placeholder="Confirm Password..."/>
+
+<!--                            {{form.password2}}-->
                         </div>
                         <div class="form-group">
                             <input type="checkbox" name="agree-term" id="agree-term" class="agree-term"/>
@@ -66,8 +78,8 @@
 </div>
 
 <!-- JS -->
-<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static '/js/main.js' %}"></script>
 
 
 {% endblock content %}
